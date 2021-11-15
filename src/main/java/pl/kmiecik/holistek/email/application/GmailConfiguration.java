@@ -26,14 +26,6 @@ class GmailConfiguration {
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        /*
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(587);
-        mailSender.setUsername("kk1975@gmail.com");
-        mailSender.setPassword("");
-
-        */
-
 
         mailSender.setHost("smtp.aptiv.com");
         mailSender.setPort(25);
@@ -45,15 +37,6 @@ class GmailConfiguration {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.debug", "true");
-
-        /* kontener dockerowy linagora/james-jpa-sample trzeba uruchomic
-           zmienic c:/windows/system32/drivers/etc/hosts
-        127.0.0.1	james.local
-        127.0.0.1	eoltserverprod.local
-         zmiana w notepadzie zeby zapisac plik bez rozszerzenia*/
-/*
-        mailSender.setHost("james.local");
-        mailSender.setPort(25);*/
 
         return mailSender;
     }
